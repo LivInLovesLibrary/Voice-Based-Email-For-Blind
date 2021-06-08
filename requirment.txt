@@ -2,3 +2,4 @@ pyttsx
 SpeechRecognition
 PyAudio
 simplegmail
+html2text

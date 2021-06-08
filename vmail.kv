@@ -1,0 +1,74 @@
+# Custom button
+<CustButton@Button>:
+	font_size: 32
+
+
+# Define id so I can refer to the CalcGridLayout
+# class functions
+# Display points to the entry widget
+<CalcGridLayout>:
+	id: calculator
+	display: entry
+	rows: 4
+	padding: 10
+	spacing: 10
+	
+
+	
+
+	# Where input is displayed
+	BoxLayout:
+		spacing: 10
+		Label:
+            text:"VOICE BASED EMAIL FOR BLIND"
+            font_size:36
+    
+    BoxLayout:
+        Image:
+            source: 'mic.png'
+            size_hint_x: 0.4
+		TextInput:
+			id: entry
+			font_size: 25
+			text:app.mydisplay
+            background_color:0.93431,1.00000,0.75294,1
+            foreground_color: (1, 0.4, 0.5, 1)
+			border_radius: [125]
+			cursor_blink: False
+			readonly: True
+	
+	# When buttons are pressed update the entry
+	BoxLayout:
+		spacing: 10
+		CustButton:
+			text: "Start"
+            size_hint:0.8, 0.8
+			background_color: 0.9137, 0.9490, 0.4862, 1
+			on_press: root.mainfunction()
+		CustButton:
+			text: "Logout"
+            size_hint:0.8, 0.8
+			background_color: 0.5, 0.02, 0.02, 1
+			on_press: root.logoutbtn()
+		
+	BoxLayout:
+		spacing: 10
+		CustButton:
+			text: "About"
+            size_hint:0.8, 0.4
+			on_press: root.aboutbtn()
+		CustButton:
+			text: "Made by"
+            size_hint:0.8, 0.4
+			on_press: root.update()
+			on_release: root.welcome()
+			
+<P>:
+    Label:
+        text:"\n\n\nVoice based E-mail system architecture that can be \nused by a Blind person to access E-mails easily and \nefficiently. The contribution made by this research has \nenabled the Blind people to send and receive voice \nbased E-Mail messages in their native language with \nthe help of a computer or a mobile device."
+        size_hint:0.6, 0.2
+        pos_hint : {"x":0.2,"top":1}
+		
+
+	
+		

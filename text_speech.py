@@ -1,7 +1,6 @@
 import speech_recognition as sr
 import pyttsx3  # To convert text to speech
 
-
 def text_to_speech(sentence):
     engine = pyttsx3.init()
     engine.setProperty('rate', 150)
@@ -13,7 +12,7 @@ def text_to_speech(sentence):
 def speech_to_text():
     r = sr.Recognizer()
     with sr.Microphone() as source:
-        print("Say something!")
+        print("Listening...")
         audio = r.listen(source)
 
     # Speech recognition using Google Speech Recognition
@@ -22,7 +21,6 @@ def speech_to_text():
         # to use another API key, use `r.recognize_google(audio, key="GOOGLE_SPEECH_RECOGNITION_API_KEY")`
         # instead of `r.recognize_google(audio)`
         result = r.recognize_google(audio)
-        print(type(result))
         print("You said: " + result)
     except sr.UnknownValueError:
         print("Google Speech Recognition could not understand audio")

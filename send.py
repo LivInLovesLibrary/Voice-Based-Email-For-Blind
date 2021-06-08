@@ -38,9 +38,9 @@ def send_message():
     else:
         final_bcc = bcc
 
-    text_to_speech('Say the subject of the Mail')
+    text_to_speech('say the subject of the message you want to send !')
     subject = speech_to_text()
-    text_to_speech('Say the message you want to send !')
+    text_to_speech('say the message you want to send !')
     message_text = speech_to_text()
     text_to_speech("Do you Add you Signature in you Mail?")
     signAsk = speech_to_text()
@@ -48,6 +48,8 @@ def send_message():
         sign = True
     else:
         sign = False
+
+    from simplegmail import Gmail
 
     params = {
         "to": to,
