@@ -29,12 +29,15 @@ Complete the steps described in the rest of this page, and in about five minutes
 2. SpeechRecognition
 3. PyAudio
 4. simplegmail
+5. os
+6. kivy
+7. kivymd
 
 To Run this Project:
 ```
 cd <Project Directory>
 pip install requirment.txt
-python voice_project.py
+python main.py
 ```
 
 
